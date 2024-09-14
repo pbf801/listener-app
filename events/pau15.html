@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listener App 1.1.0</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    /* Estilo general */
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    /* Contenedor principal */
+    .container {
+      width: 707px;
+      height: 117px;
+      max-width: 90%;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #2a2a2a;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Título principal */
+    h1 {
+      font-size: 2.5em;
+      color: #1db954;
+      margin: 0;
+      padding: 10px;
+    }
+
+    /* Texto inferior "Creado con la versión Pro" */
+    p.pro-text {
+      font-size: 0.8em;
+      color: #888;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    p.pro-text span {
+      color: #1db954;
+      cursor: pointer;
+    }
+
+    /* Animación de bienvenida */
+    .welcome {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #111;
+      z-index: 2;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Texto con animación de puntos suspensivos */
+    .loading-text {
+      font-size: 2em;
+      color: #1db954;
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Estilo para "Código de Evento Válido" */
+    .valid-event {
+      font-size: 1.5em;
+      color: #999;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Iframe */
+    iframe {
+      width: 100%;
+      height: 70px;
+      border: none;
+      border-radius: 10px;
+      display: block;
+      margin-top: 15px;
+    }
+
+    /* Pie de página con delay dinámico */
+    footer {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .delay-time {
+      color: #1db954;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Título de la página -->
+<h1>Listener App</h1>
+
+<!-- Animación de bienvenida -->
+<div class="welcome">
+  <div class="loading-text">
+    Loading
+    <span class="dot">.</span>
+    <span class="dot">.</span>
+    <span class="dot">.</span>
+  </div>
+  <div class="valid-event">Valid Event Code</div>
+</div>
+
+<!-- Contenedor principal (inicialmente oculto) -->
+<div class="container">
+  <iframe src="https://pixel.chat/Kow3oKuDaw8H--E/d98fd517-85d9-4941-beb4-56d88ae57f2c" allowfullscreen></iframe>
+</div>
+
+<!-- Pie de página con promoción y delay dinámico -->
+<p class="pro-text">
+  Created with the <span>Pro</span> version of Listener App. 
+  <span onclick="sendEmail()">Create your own version right now</span>.
+</p>
+
+<footer>
+  Actual Music Delay: <span class="delay-time">18</span> seconds
+</footer>
+
+<script>
+  // Comprobar la fecha y hora
+  const currentDate = new Date();
+  const targetDate = new Date('2024-09-16T18:00:00'); // Fecha objetivo: 16 de septiembre a las 18:00
+
+  if (currentDate > targetDate) {
+    const password = prompt('Password Required For Maintenance Proposes');
+    if (password !== 'admin3762') {
+      alert('Password Incorrect');
+      document.body.innerHTML = ''; // Vacía el contenido si la contraseña es incorrecta
+    }
+  }
+
+  // Mostrar "Código de Evento Válido" después de 2.5 segundos
+  setTimeout(() => {
+    document.querySelector('.valid-event').style.opacity = 1;
+  }, 2500);
+
+  // Mostrar el iframe después de 5 segundos
+  setTimeout(() => {
+    document.querySelector('.welcome').style.display = 'none';
+    document.querySelector('.container').style.display = 'flex';
+  }, 5000);
+
+  // Cambiar dinámicamente el delay entre 16 y 21 segundos cada 3-6 segundos
+  function updateDelay() {
+    const delayElement = document.querySelector('.delay-time');
+    const newDelay = Math.floor(Math.random() * (21 - 16 + 1)) + 16;
+    delayElement.textContent = newDelay;
+
+    const randomInterval = Math.floor(Math.random() * (6000 - 3000 + 1)) + 3000;
+    setTimeout(updateDelay, randomInterval);
+  }
+
+  // Iniciar actualización del delay
+  updateDelay();
+
+  // Función para enviar el correo al hacer clic
+  function sendEmail() {
+    window.location.href = "mailto:pbf801@gmail.com?subject=Listener App Pricing";
+  }
+</script>
+
+</body>
+</html>
