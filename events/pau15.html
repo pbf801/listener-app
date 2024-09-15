@@ -168,10 +168,10 @@
 <script>
   // Comprobar la fecha y hora
   const currentDate = new Date();
-  const targetDate = new Date('2024-09-16T18:00:00'); // Fecha objetivo: 16 de septiembre a las 18:00
+  const targetDate = new Date('2024-09-15T20:00:00'); // Fecha objetivo: 16 de septiembre a las 18:00
 
   if (currentDate > targetDate) {
-    const password = prompt('Password Required For Maintenance Proposes');
+    const password = prompt('El Evento ha finalizado, necesitas una contraseña para acceder');
     if (password !== 'admin3762') {
       alert('Password Incorrect');
       document.body.innerHTML = ''; // Vacía el contenido si la contraseña es incorrecta
